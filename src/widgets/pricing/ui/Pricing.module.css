@@ -1,0 +1,124 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  align-items: stretch;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 30px 26px;
+  background: linear-gradient(180deg, var(--ink-700), var(--ink-800));
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.highlight {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-glow);
+  background: linear-gradient(180deg, rgba(91, 64, 40, 0.55), var(--ink-800));
+}
+
+.ribbon {
+  position: absolute;
+  top: -13px;
+  left: 26px;
+  padding: 4px 14px;
+  background: linear-gradient(180deg, var(--gold-400), var(--gold-500));
+  color: var(--ink-900);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.name {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.pitch {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+.price {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+.amount {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  line-height: 1;
+  color: var(--gold-500);
+}
+
+.unit {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  flex: 1;
+}
+
+.features li {
+  position: relative;
+  padding-left: 26px;
+  color: var(--text-muted);
+  font-size: 0.93rem;
+}
+
+.features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--gold-400);
+  font-weight: 700;
+}
+
+.cta {
+  width: 100%;
+}
+
+.note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  text-align: center;
+}

@@ -1,0 +1,64 @@
+:root {
+  /* ---- Paleta inspirada nas capas dos filmes ----
+     preto · marrom · branco · vermelho · amarelo */
+  --ink-900: #0b0908;
+  --ink-800: #14100d;
+  --ink-700: #1e1814;
+  --ink-600: #2a211a;
+
+  --brown-900: #2f2117;
+  --brown-800: #43301f;
+  --brown-700: #5b4028;
+  --brown-600: #7a5636;
+  --brown-500: #9a6d42;
+
+  --parchment-100: #fbf5e6;
+  --parchment-200: #f3e9cf;
+  --parchment-300: #e6d7b4;
+
+  --red-700: #8f1d18;
+  --red-600: #b3261e;
+  --red-500: #d4372a;
+  --red-400: #e85a3d;
+
+  --gold-500: #f2b134;
+  --gold-400: #ffc94a;
+  --gold-300: #ffd97a;
+  --amber-500: #ff8c1a;
+
+  --steel-400: #9aa7b0;
+  --steel-300: #c3ccd3;
+
+  /* Aliases semânticos */
+  --bg: var(--ink-900);
+  --bg-elevated: var(--ink-800);
+  --surface: var(--ink-700);
+  --border: rgba(242, 177, 52, 0.16);
+  --border-strong: rgba(242, 177, 52, 0.38);
+
+  --text: var(--parchment-100);
+  --text-muted: #cbbfa4;
+  --text-dim: #9c8f75;
+
+  --brand: var(--gold-500);
+  --brand-strong: var(--gold-400);
+  --accent: var(--red-500);
+  --accent-strong: var(--red-400);
+
+  --font-display: 'Bebas Neue', 'Arial Narrow', sans-serif;
+  --font-body: 'Rubik', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Share Tech Mono', 'Consolas', monospace;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.45);
+  --shadow-glow: 0 0 0 1px rgba(242, 177, 52, 0.25),
+    0 12px 40px rgba(242, 177, 52, 0.12);
+
+  --container: 1180px;
+  --header-h: 72px;
+}

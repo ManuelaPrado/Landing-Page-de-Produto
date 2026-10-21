@@ -1,0 +1,13 @@
+.stars {
+  display: inline-flex;
+  gap: 2px;
+  line-height: 1;
+}
+
+.on {
+  color: var(--gold-400);
+}
+
+.off {
+  color: rgba(255, 255, 255, 0.2);
+}

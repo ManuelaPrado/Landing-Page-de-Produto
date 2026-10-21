@@ -1,0 +1,67 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(6, 4, 3, 0.78);
+  backdrop-filter: blur(6px);
+  animation: fade 0.2s ease;
+}
+
+.dialog {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-glow), var(--shadow-md);
+  animation: rise 0.25s ease;
+}
+
+.close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--parchment-100);
+  background: rgba(11, 9, 8, 0.6);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.close:hover {
+  background: var(--red-600);
+  transform: rotate(90deg);
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.98);
+  }
+}
+
+@media (max-width: 560px) {
+  .dialog {
+    max-height: 94vh;
+  }
+}
