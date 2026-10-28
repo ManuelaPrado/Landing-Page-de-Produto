@@ -60,6 +60,9 @@ export function WaitlistForm({ defaultDragonId }: WaitlistFormProps) {
             className={styles.input}
             type="email"
             name="email"
+            autoComplete="email"
+            required
+            aria-describedby={status === 'error' ? 'email-error' : undefined}
             placeholder="voce@email.com"
             value={email}
             onChange={(event) => {
@@ -75,6 +78,7 @@ export function WaitlistForm({ defaultDragonId }: WaitlistFormProps) {
           <select
             className={styles.input}
             name="dragon"
+            aria-label="Selecione o dragão de interesse"
             value={dragonId}
             onChange={(event) => setDragonId(event.target.value)}
           >
@@ -88,7 +92,7 @@ export function WaitlistForm({ defaultDragonId }: WaitlistFormProps) {
       </div>
 
       {status === 'error' && (
-        <p className={styles.error} role="alert">
+        <p id="email-error" className={styles.error} role="alert">
           Digite um e-mail válido para entrar na lista.
         </p>
       )}

@@ -12,8 +12,9 @@ import { Footer } from '@/widgets/footer'
 export function HomePage() {
   return (
     <>
+      <a className="skipLink" href="#conteudo-principal">Pular para o conteúdo principal</a>
       <Header />
-      <main>
+      <main id="conteudo-principal" tabIndex={-1}>
         <Hero />
         <DragonCatalog />
         <Benefits />

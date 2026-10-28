@@ -41,6 +41,7 @@ export function Header() {
           className={styles.burger}
           onClick={() => setOpen((value) => !value)}
           aria-expanded={open}
+          aria-controls="menu-mobile"
           aria-label={open ? 'Fechar menu' : 'Abrir menu'}
         >
           <span className={styles.burgerIcon} aria-hidden="true" />
@@ -48,7 +49,7 @@ export function Header() {
       </Container>
 
       {open && (
-        <div className={styles.drawer}>
+        <nav id="menu-mobile" className={styles.drawer} aria-label="Navegação móvel">
           <Container className={styles.drawerInner}>
             {site.nav.map((item) => (
               <button
@@ -64,7 +65,7 @@ export function Header() {
               Entrar na lista
             </Button>
           </Container>
-        </div>
+        </nav>
       )}
     </header>
   )

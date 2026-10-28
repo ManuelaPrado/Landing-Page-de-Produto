@@ -103,3 +103,8 @@ select.input {
     grid-template-columns: 1fr 1fr;
   }
 }
+
+
+.input[aria-invalid="true"] { border-color: var(--red-400); box-shadow: 0 0 0 3px rgba(212, 55, 42, 0.18); }
+.error { margin-top: -8px; }
+@media (max-width: 420px) { .submit { width: 100%; align-self: stretch; white-space: normal; text-align: center; } .success { padding: 20px; } }

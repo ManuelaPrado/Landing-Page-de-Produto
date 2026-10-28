@@ -119,3 +119,10 @@ p {
     transition-duration: 0.001ms !important;
   }
 }
+
+
+/* Atalho de acessibilidade para navegação por teclado. */
+.skipLink { position: fixed; top: 8px; left: 8px; z-index: 1000; padding: 12px 16px; color: var(--ink-900); background: var(--gold-400); border-radius: var(--radius-md); transform: translateY(-160%); transition: transform 0.15s ease; }
+.skipLink:focus { transform: translateY(0); }
+main:focus { outline: none; }
+@media (max-width: 380px) { h1 { font-size: clamp(2.35rem, 12vw, 3rem); } h2 { font-size: clamp(1.8rem, 8vw, 2.3rem); } }
