@@ -109,3 +109,32 @@ Regra de dependência: uma camada só importa das camadas abaixo dela.
 - **Catálogo interativo de 16 dragões** — ao clicar, abre um **modal** com nome, espécie, classe, raridade, montaria, filme de estreia, **habilidades** e **história/lenda**, além de uma ficha técnica com barras de atributos.
 - Diferenciais, "como funciona" em 4 passos, avaliações fictícias, planos de pré-venda e FAQ.
 - **Formulario simulado:** formulário de lista de espera (valida e-mail e mostra confirmação) + navegação por scroll entre seções.
+
+
+# Evolução da Landing Page com MCP
+
+## Aspecto analisado
+Foram priorizadas a acessibilidade da navegação e a adaptação da interface para telas pequenas na landing page RobotDragon.
+
+## Modificações realizadas
+- Adicionado o atalho “Pular para o conteúdo principal”, visível ao navegar com o teclado.
+- Melhorada a semântica do menu móvel com `nav`, `aria-controls` e identificação da navegação.
+- Aprimorado o formulário da lista de espera com `required`, `autoComplete`, associação da mensagem de erro ao campo e indicação visual de erro.
+- Ajustados estilos para telas estreitas, incluindo o botão de envio do formulário.
+- Mantido o indicador de foco visível para navegação por teclado e o suporte a preferência por movimento reduzido já existente.
+
+## MCP utilizado
+Ferramentas de navegador integradas à sessão, incluindo `openBrowserPage` e `runPlaywrightCode` para executar interações Playwright na página local.
+
+## Resultados observados
+- O campo de e-mail foi identificado pelo nome acessível “Seu e-mail” e apresentou `type="email"`, `required`, `autocomplete="email"` e `aria-invalid="false"` no estado inicial.
+- Ao enviar um endereço malformado (`malformado`), o campo passou para `aria-invalid="true"` e foi exibida a mensagem “Digite um e-mail válido para entrar na lista.” O campo referenciou a mensagem por `aria-describedby="email-error"`, correspondente ao `id` do alerta.
+- Ao editar o campo após o erro, a mensagem foi removida e `aria-invalid` voltou a `"false"`; ao enviar novamente um endereço malformado, o erro apareceu outra vez.
+- Com `teste@example.com`, o formulário exibiu o estado de sucesso “Você está na lista!” e incluiu o endereço na confirmação.
+
+## Limites e problemas observados
+- A validação foi feita no formulário da página local. Não foram verificados viewports específicos de desktop ou celular, o menu móvel, os links de navegação nem o atalho para pular ao conteúdo.
+- O Playwright aguardou a estabilidade do botão e não concluiu o clique normal dentro do tempo limite; a sequência foi completada com clique forçado. Isso é uma ressalva da interação automatizada, não uma falha funcional comprovada do formulário.
+
+## Avaliação da contribuição
+As ferramentas permitiram testar as transições reais do formulário no navegador, conferir a mensagem de erro e confirmar sua associação acessível ao campo, além de observar o estado de sucesso. A execução também mostrou os limites do que foi validado: não há evidência nesta sessão para afirmar resultados de testes responsivos ou de navegação.
